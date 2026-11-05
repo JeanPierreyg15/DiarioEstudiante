@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diario de Estudio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="contenedor">
+    <header class="cabecera">
+      <h1>Diario de Estudio</h1>
+      <p class="subtitulo">Registra tus sesiones y mantén viva tu racha.</p>
+    </header>
+
+    <section class="racha" aria-labelledby="titulo-racha">
+      <p class="racha-etiqueta" id="titulo-racha">Racha actual</p>
+      <p class="racha-valor">
+        <span id="racha-numero">0</span>
+        <span aria-hidden="true">🔥</span>
+      </p>
+      <p class="racha-texto" id="racha-texto">días seguidos</p>
+    </section>
+
+    <section class="tarjeta" aria-labelledby="titulo-formulario">
+      <h2 id="titulo-formulario">Nueva sesión</h2>
+
+      <form id="formulario-sesion">
+        <div class="campo">
+          <label for="fecha">Fecha</label>
+          <input type="date" id="fecha" name="fecha" required>
+        </div>
+
+        <div class="campo">
+          <label for="tema">Tema</label>
+          <input
+            type="text"
+            id="tema"
+            name="tema"
+            placeholder="Ej.: Matemáticas"
+            autocomplete="off"
+            required
+          >
+        </div>
+
+        <div class="campo">
+          <label for="minutos">Minutos</label>
+          <input
+            type="number"
+            id="minutos"
+            name="minutos"
+            placeholder="Ej.: 45"
+            inputmode="numeric"
+            min="1"
+            step="1"
+            required
+          >
+        </div>
+
+        <button type="submit">Guardar sesión</button>
+      </form>
+    </section>
+
+    <section class="tarjeta" aria-labelledby="titulo-sesiones">
+      <h2 id="titulo-sesiones">Sesiones</h2>
+
+      <ul id="lista-sesiones" class="lista-sesiones"></ul>
+      <p id="sin-sesiones" class="vacio">Todavía no hay sesiones.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
